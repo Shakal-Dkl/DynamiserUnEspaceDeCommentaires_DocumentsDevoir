@@ -3,16 +3,26 @@
 //let element = document.getElementsByClassName("-my-4");
 //element.remove();
 
-
-
+let formulaires = document.querySelector ("form");
+//const validateBtn = document.querySelector("button");
+formulaires.addEventListener("submit", addCommentValidate);
 // ma fonction
-function addCommentValidate () {
+function addCommentValidate (event) {
+    event.preventDefault()
+
     //Création de mes variables
     let inputLastName = document.getElementById ("last-name");
     let inputFirstName = document.getElementById ("first-name");
     let message = document.getElementById ("message");
     let comments = document.getElementById ("comment-list");
-    
+    let error = document.getElementById("error-message");
+    if (inputFirstName.value.trim() == ""){
+        error.style.display = "block";
+        // let error =document.createTextNode("")
+        // error.innerHTML = "Tous les champs doivent être remplis ";
+        // error.style.color = "red";
+        alert("salut")
+    }
 
 
     // Création de mes nouvelles Balises
@@ -34,24 +44,4 @@ function addCommentValidate () {
     p.appendChild (newItemMessage);
 
 }
-
-//empeche le rechargement de la page
-const validateBtn = document.querySelector("button");
-validateBtn.addEventListener("click", addButton);
-function addButton(event){
-    event.preventDefault();
-}
-
-// Vérifié si les champs sont vides
-let formulaires = document.querySelector ("form");
-formulaires.addEventListener("submit", function(e) {
-    if (inputFirstName.value.trim() == ""){
-        let error =document.createTextNode("")
-        error.innerHTML = "Tous les champs doivent être remplis ";
-        error.style.color = "red";
-        e.preventDefault();
-    }
-    
-});
-
 

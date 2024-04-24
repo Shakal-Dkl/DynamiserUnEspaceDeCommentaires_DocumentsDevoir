@@ -1,7 +1,7 @@
 
 //Supprimer un élément
-let element = document.getElementsByClassName("-my-4");
-element.remove();
+//let element = document.getElementsByClassName("-my-4");
+//element.remove();
 
 
 

@@ -4,7 +4,7 @@
 //element.remove();
 
 let formulaires = document.querySelector ("form");
-//const validateBtn = document.querySelector("button");
+
 formulaires.addEventListener("submit", addCommentValidate);
 // ma fonction
 function addCommentValidate (event) {
@@ -16,11 +16,16 @@ function addCommentValidate (event) {
     let message = document.getElementById ("message");
     let comments = document.getElementById ("comment-list");
     let error = document.getElementById("error-message");
+
     if (inputFirstName.value.trim() == ""){
         error.style.display = "block";
         // let error =document.createTextNode("")
         // error.innerHTML = "Tous les champs doivent être remplis ";
         // error.style.color = "red";
+        alert("salut")
+    }
+    if (inputLastName.value.trim() == ""){
+        error.style.display = "block";
         alert("salut")
     }
 

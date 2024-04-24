@@ -1,12 +1,28 @@
 
+//Supprimer un élément
+//let element = document.getElementsByClassName("-my-4");
+//element.remove();
+
+let formulaires = document.querySelector ("form");
+//const validateBtn = document.querySelector("button");
+formulaires.addEventListener("submit", addCommentValidate);
 // ma fonction
-function addCommentValidate () {
+function addCommentValidate (event) {
+    event.preventDefault()
+
     //Création de mes variables
     let inputLastName = document.getElementById ("last-name");
-    let inputFirstname = document.getElementById ("first-name");
+    let inputFirstName = document.getElementById ("first-name");
     let message = document.getElementById ("message");
     let comments = document.getElementById ("comment-list");
-    const errorMessage = document.getElementById ("error-message");
+    let error = document.getElementById("error-message");
+    if (inputFirstName.value.trim() == ""){
+        error.style.display = "block";
+        // let error =document.createTextNode("")
+        // error.innerHTML = "Tous les champs doivent être remplis ";
+        // error.style.color = "red";
+        alert("salut")
+    }
 
 
     // Création de mes nouvelles Balises
@@ -15,7 +31,7 @@ function addCommentValidate () {
     let p = document.createElement ("p");
     let newDivP =document.createElement ("div");
 
-    let newItemFirstName = document.createTextNode (inputFirstname.value + " ");
+    let newItemFirstName = document.createTextNode (inputFirstName.value + " ");
     let newItemLastName = document.createTextNode (inputLastName.value);
     let newItemMessage = document.createTextNode (message.value);
 
@@ -29,11 +45,3 @@ function addCommentValidate () {
 
 }
 
-//empeche le rechargement de la page
-const validateBtn = document.querySelector("button");
-validateBtn.addEventListener("click", addButton);
-function addButton(event){
-    event.preventDefault();
-    let 
-
-}

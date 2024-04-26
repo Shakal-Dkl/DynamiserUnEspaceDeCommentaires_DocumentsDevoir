@@ -16,18 +16,24 @@ function addCommentValidate (event) {
     let comments = document.getElementById ("comment-list");
     let error = document.getElementById("error-message");
     // Vérification des champs vide
-    if (inputFirstName.value.trim() == ""){
+    if (inputFirstName.value.trim()=="" && inputLastName.value.trim()=="" && message.value.trim()== ""){
         error.style.display = "block";
         //alert("salut")
+    }else {
+        error.style.display ="none";
     }
-    if (inputLastName.value.trim() == ""){
-        error.style.display = "block";
-        //alert("salut")
-    }
-    if (message.value.trim() == ""){
-        error.style.display = "block";
-        //alert("salut")
-    }
+    // if (inputLastName.value.trim() == ""){
+    //     error.style.display = "block";
+    //     //alert("salut")
+    // }else {
+    //     error.style.display ="none";
+    // }
+    // if (message.value.trim() == ""){
+    //     error.style.display = "block";
+    //     //alert("salut")
+    // }else {
+    //     error.style.display ="none";
+    // }
 
 
     // Création de mes nouvelles Balises
@@ -51,6 +57,15 @@ function addCommentValidate (event) {
     h3.appendChild (newItemLastName);
     newDivP.appendChild (p);
     p.appendChild (newItemMessage);
+
+
+    
+    // vide les champs une fois validé
+    for( let i = 0; i< formulaires.length; i++){
+        formulaires[i].value = "";
+    }
+
+    
 
 }
 

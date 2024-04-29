@@ -29,20 +29,6 @@ function addCommentValidate (event) {
     }
     
 
-    // if (inputLastName.value.trim() == ""){
-    //     error.style.display = "block";
-    //     //alert("salut")
-    // }else {
-    //     error.style.display ="none";
-    // }
-    // if (message.value.trim() == ""){
-    //     error.style.display = "block";
-    //     //alert("salut")
-    // }else {
-    //     error.style.display ="none";
-    // }
-
-    
     // Création de mes nouvelles Balises
     let newDiv = document.createElement ("div");
     let h3 = document.createElement ("h3");
@@ -57,6 +43,7 @@ function addCommentValidate (event) {
     h3.setAttribute("class", "font-medium text-gray-900");
     p.setAttribute("class", "prose prose-sm mt-4 max-w-none text-gray-500");
 
+    
     comments.appendChild (newDiv);
     comments.appendChild (newDivP);
     newDiv.appendChild (h3);

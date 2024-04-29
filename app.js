@@ -5,6 +5,7 @@ let formulaires = document.querySelector ("form");
 formulaires.addEventListener("submit", addCommentValidate);
 // ma fonction
 function addCommentValidate (event) {
+
     event.preventDefault()
     
     
@@ -15,13 +16,19 @@ function addCommentValidate (event) {
     let message = document.getElementById ("message");
     let comments = document.getElementById ("comment-list");
     let error = document.getElementById("error-message");
+
+
+
     // Vérification des champs vide
     if (inputFirstName.value.trim()=="" && inputLastName.value.trim()=="" && message.value.trim()== ""){
         error.style.display = "block";
-        //alert("salut")
+        
+        // alert("salut")
     }else {
         error.style.display ="none";
     }
+    
+
     // if (inputLastName.value.trim() == ""){
     //     error.style.display = "block";
     //     //alert("salut")
@@ -35,7 +42,7 @@ function addCommentValidate (event) {
     //     error.style.display ="none";
     // }
 
-
+    
     // Création de mes nouvelles Balises
     let newDiv = document.createElement ("div");
     let h3 = document.createElement ("h3");
@@ -56,16 +63,11 @@ function addCommentValidate (event) {
     h3.appendChild (newItemFirstName);
     h3.appendChild (newItemLastName);
     newDivP.appendChild (p);
-    p.appendChild (newItemMessage);
+    p.appendChild (newItemMessage); 
 
-
-    
     // vide les champs une fois validé
-    for( let i = 0; i< formulaires.length; i++){
+    for(let i = 0; i< formulaires.length; i++){
         formulaires[i].value = "";
-    }
-
-    
-
+        }
 }
 
